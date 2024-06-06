@@ -179,6 +179,8 @@ contract CallBreaker is CallBreakerStorage {
 
     /// @notice Fetches the indices of a given CallObject from the hintdicesStore
     /// @dev This function validates that the correct callId lives at these hintdices
+    /// @dev There is no validation that the 'hintdicesStore' contains ALL positions of the call.
+    /// In other words, the 'getCompleteCallIndexList' may return a superset of the 'hintdicesStore'.
     /// @param callObj The CallObject whose indices are to be fetched
     /// @return An array of indices where the given CallObject is found
     function getCallIndex(CallObject calldata callObj) public view returns (uint256[] memory) {
