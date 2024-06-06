@@ -113,7 +113,7 @@ contract SmarterContract {
 
     /// @notice Ensures that there is a future call to the specified callobject after the current call
     /// @param callObj The callobject to check for. This callObject should strictly be a future call
-    /// @param hintdex The hint index to start checking for future calls
+    /// @param hintdex The hint index of the expected future call
     /// @custom:reverts FutureCallExpected() Hintdexes should always be in the future of the current executing call
     /// @custom:reverts CallMismatch() The callobject at the hintdex should match the specified callObject
     function assertFutureCallTo(CallObject memory callObj, uint256 hintdex) public view {
